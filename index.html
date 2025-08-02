@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GHG Emissions Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+  <header>
+    🌱 GHG Emissions Calculator Dashboard
+  </header>
+
+  <div class="main">
+
+    <!-- First Container (left) -->
+    <div class="container">
+      <h3>GHG Emissions Calculator</h3>
+
+      <label for="electricity">Electricity Used (kWh)</label>
+      <input type="number" id="electricity" placeholder="e.g., 300">
+
+      <label for="fuel">Fuel Consumed (liters)</label>
+      <input type="number" id="fuel" placeholder="e.g., 50">
+
+      <label for="car">Distance Traveled by Car (km)</label>
+      <input type="number" id="car" placeholder="e.g., 100">
+
+      <button onclick="calculateGHG()">Calculate Emissions</button>
+
+      <div class="result" id="result">Total CO₂e Emissions: -- kg</div>
+    </div>
+
+    
+    <!-- Second Container (right) -->
+    <div class="container">
+      <h3>Activity-Based Emissions</h3>
+
+      <label for="activity">Select or Type an Activity</label>
+      <input list="activities" id="activity" name="activity" placeholder="Start typing..." oninput="fillDetails()">
+      <datalist id="activities"></datalist>
+      <div class="inline-group">
+      <div class="inline-field">
+        <label for="scope">Scope</label>
+        <input type="text" id="scope" readonly>
+      </div>
+      <div class="inline-field">
+        <label for="unit">Unit</label>
+        <input type="text" id="unit" readonly>
+      </div>
+    </div>
+
+      <label for="category">Category</label>
+      <input type="text" id="category" readonly>
+      
+      <label for="emission">Emission Factor <small>(kg CO₂e per unit)</small></label>
+      <input type="text" id="emission" readonly>
+
+      <label for="quantity">Enter Quantity</label>
+      <input type="number" id="quantity" placeholder="e.g., 100">
+
+      <button onclick="calculateEmission()">Calculate Emission</button>
+
+      <div class="result" id="activityResult">Total Emissions: -- kg CO₂e</div>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2025 GHG Dashboard. All rights reserved.
+  </footer>
+
+  <script src="Script.js"></script>
+
+</body>
+</html>
